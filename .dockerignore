@@ -1,0 +1,13 @@
+# Ignore design assets & drafts
+design/
+
+# Ignore Git data
+.git
+.gitignore
+
+# Ignore system clutter
+.DS_Store
+
+# Ignore docs that aren't needed inside container
+README.md
+notes.md
