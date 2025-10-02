@@ -1,13 +1,16 @@
-# Ignore design assets & drafts
-design/
-
-# Ignore Git data
+# Git files
 .git
 .gitignore
 
-# Ignore system clutter
-.DS_Store
+# Docker build files
+Dockerfile
+.dockerignore
 
-# Ignore docs that aren't needed inside container
+# Development / IDE files
+.vscode/
+.DS_Store
+node_modules/
+
+# Optional: project docs (keep if you don’t want wireframes in container)
+design/
 README.md
-notes.md
