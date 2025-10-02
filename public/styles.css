@@ -1,6 +1,4 @@
 /* Freshman Guide — styles.css
-   Minimal, accessible, inspired by the clean "Devialet" theme
-   USIU-inspired palette + creative lighter accents
 */
 
 
@@ -61,7 +59,7 @@ header { background: transparent; padding: 1rem 0; }
 .stat .stat-label { font-size:.85rem; color:var(--muted); }
 
 /* portrait image on the right — uses unsplash landscape cropped to portrait */
-.hero-right { min-height:420px; border-radius:14px; background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
+.hero-right { min-height:420px; border-radius:14px; background-image: url('https://images.unsplash.com/photo-1622126195600-41efc0b028e2?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size:cover; background-position:center; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
 
 /* Estimator / summary */
 /* ========================== */
