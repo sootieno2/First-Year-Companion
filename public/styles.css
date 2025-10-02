@@ -1,0 +1,409 @@
+/* Freshman Guide — styles.css
+   Minimal, accessible, inspired by the clean "Devialet" theme
+   USIU-inspired palette + creative lighter accents
+*/
+
+
+
+:root{
+  --usiu-navy: #002147;     /* primary */
+  --accent:   #C69214;      /* gold accent */
+  --soft:     #f6f7f8;
+  --muted:    #55636a;
+  --bg:       #ffffff;
+  --radius:   12px;
+  --gap:      1.25rem;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #1f2933;
+  background: var(--bg);
+  -webkit-font-smoothing:antialiased;
+  line-height: 1.55;
+  overflow-y: auto;
+  padding-bottom: 4rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: 0; top: -40px;
+  background: var(--usiu-navy); color: #fff; padding: .5rem .75rem;
+  z-index: 999;
+}
+.skip-link:focus { top: 8px; }
+
+/* Header / nav */
+header { background: transparent; padding: 1rem 0; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.brand { display:flex; align-items:baseline; gap:.6rem; }
+.logo-text { font-weight:700; color:var(--usiu-navy); letter-spacing:.08rem; font-size:1.1rem; }
+.site-title { color:var(--muted); font-size:.95rem; }
+.nav-links { list-style:none; display:flex; gap:1rem; align-items:center; }
+.nav-links a { color:var(--muted); text-decoration:none; padding:.25rem .5rem; }
+.nav-links a[aria-current="page"] { color:var(--usiu-navy); font-weight:600; }
+.cta { background:var(--accent); color:#fff; text-decoration:none; padding:.45rem .9rem; border-radius:999px; font-weight:700; }
+
+/* Hero */
+.hero { max-width:1200px; margin: 2rem auto; display:grid; grid-template-columns: 1fr 0.9fr; gap:2rem; padding: 2rem 1.25rem; align-items:center; }
+.hero-left { padding:1rem 0; }
+.hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight:800; color: var(--usiu-navy); margin-bottom:.5rem; letter-spacing:.02em; }
+.lead { color:var(--muted); max-width: 58ch; margin-bottom:1.25rem; }
+.hero-actions { display:flex; gap:.75rem; margin-bottom:1.25rem; }
+.btn { background:var(--usiu-navy); color:#fff; border:0; padding:.6rem .9rem; border-radius:999px; cursor:pointer; font-weight:700; }
+.btn.outline { background:transparent; color:var(--usiu-navy); border:1px solid rgba(0,0,0,0.06); }
+.hero-stats { display:flex; gap:1rem; margin-top:1rem; }
+.stat { background:var(--soft); padding: .9rem 1rem; border-radius:10px; box-shadow: 0 6px 18px rgba(18,24,32,0.04); min-width:140px; }
+.stat strong { display:block; font-size:1rem; color:var(--usiu-navy); }
+.stat .stat-label { font-size:.85rem; color:var(--muted); }
+
+/* portrait image on the right — uses unsplash landscape cropped to portrait */
+.hero-right { min-height:420px; border-radius:14px; background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
+
+/* Estimator / summary */
+/* ========================== */
+/* ✨ Estimator Section Polish */
+/* ========================== */
+
+.estimator {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1.25rem;
+}
+
+.estimator-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.estimator h2 {
+  font-size: 2.2rem;
+  color: var(--usiu-navy);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.estimator .section-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 26px rgba(2,6,23,0.06);
+  border: 1px solid rgba(2,6,23,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(2,6,23,0.08);
+}
+
+.summary-card h3 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+pre#summary {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 1rem;
+  color: #17222a;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.small-note {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+  font-style: italic;
+}
+
+/* Gold hover for buttons */
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(198, 146, 20, 0.35);
+}
+
+.btn.outline:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+
+
+/* Featured projects */
+.featured { max-width:1200px; margin: 2.25rem auto; padding: 1.25rem; text-align:center; }
+.projects-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:1.25rem; margin-top:1rem; }
+.project-card { background:#fff; border-radius:14px; overflow:hidden; text-align:left; box-shadow: 0 6px 20px rgba(2,6,23,0.04); padding-bottom: .75rem; }
+.card-img { height:140px; background-size:cover; background-position:center; }
+
+/* footer */
+footer { margin-top:2.5rem; padding:2rem 1.25rem; border-top:1px solid rgba(2,6,23,0.04); background:transparent; }
+.footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; gap:1rem; color:var(--muted); font-size:.95rem; }
+
+/* small helpers */
+.center { text-align:center; }
+.small-note { color:var(--muted); font-size:.9rem; margin-top:.75rem; }
+.small-cta { color:var(--muted); }
+
+/* responsive */
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; padding: 1.25rem; }
+  .hero-right { min-height: 320px; order: -1; }
+  .projects-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 620px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .nav-links { display:none; }
+  .cta { display:none; }
+  .hero h1 { font-size: 28px; }
+}
+
+/* ===================== */
+/* ✨ POLISH & ENHANCEMENTS */
+/* ===================== */
+
+/* Make nav feel premium */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Hero section refinement */
+.hero {
+  background: linear-gradient(115deg, var(--soft) 0%, #fff 100%);
+  border-radius: 18px;
+  padding: 4rem 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.05);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  font-size: 1rem;
+  padding: 0.8rem 1.4rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #00162d;
+}
+
+.btn.outline:hover {
+  border-color: var(--usiu-navy);
+  background: var(--usiu-navy);
+  color: #fff;
+}
+
+/* Featured projects */
+.featured {
+  background: var(--soft);
+  padding: 4rem 2rem;
+  border-radius: 16px;
+}
+
+.featured h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: var(--muted);
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  color: var(--usiu-navy);
+  margin: 0.8rem 1rem 0.4rem;
+}
+
+.project-card p {
+  padding: 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+
+/* ========================== */
+/* ✨ Premium Footer Styling */
+/* ========================== */
+
+footer {
+  background: linear-gradient(to bottom, #0e1933, #001a3d); /* Deep USIU navy gradient */
+  color: #f4f4f4;
+  padding: 4rem 1.5rem 2rem;
+  margin-top: 4rem;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  color: #d0d6e0;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #d0d6e0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  color: #d0d6e0;
+  line-height: 1.6;
+}
+
+.email-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.email-link:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #aeb8c5;
+  letter-spacing: 0.3px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    text-align: center;
+    border-left: none;
+    border-top: 2px solid var(--accent);
+    display: inline-block;
+    padding: 0.3rem 0;
+  }
+}
+
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: color 0.3s, background 0.3s, transform 0.2s;
+}         

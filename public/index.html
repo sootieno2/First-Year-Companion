@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freshman Guide — USIU (v1)</title>
+  <meta name="description" content="USIU Freshman Guide — a small orientation companion with a personalized greeting, a weekly campus cost estimator and a simple theme toggle." />
+  <link rel="canonical" href="index.html" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="nav-container" aria-label="Main navigation">
+      <div class="brand">
+        <span class="logo-text">USIU</span>
+        <span class="site-title">Freshman Guide</span>
+      </div>
+
+      <ul class="nav-links" role="menubar" aria-label="Primary">
+        <li role="none"><a role="menuitem" href="index.html" aria-current="page">Home</a></li>
+        <li role="none"><a role="menuitem" href="#">Estimator</a></li>
+        <li role="none"><a role="menuitem" href="#">Resources</a></li>
+      </ul>
+
+      <a class="cta" href="#main">Get Started</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" role="main">
+    <!-- Hero / greeting -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <h1 id="hero-heading">Welcome to USIU — Freshman Guide</h1>
+        <p class="lead">A lightweight companion to help you plan campus trips, snack budgets, and toggle a day/night theme. Loads instantly and runs locally.</p>
+
+        <div class="hero-actions">
+          <button id="run" class="btn">Run Estimator</button>
+          <button id="theme" class="btn outline">Toggle Theme</button>
+        </div>
+
+        <div class="hero-stats fade-in-stats" aria-hidden="false">
+          <div class="stat">
+            <strong id="greeting">Hello!</strong>
+            <span class="stat-label">Personal greeting</span>
+          </div>
+          <div class="stat">
+            <strong id="campus-count">—</strong>
+            <span class="stat-label">Example campus tips</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <!-- portrait-style inspirational image from Unsplash (environment) -->
+      </div>
+    </section>
+
+    
+    <!-- Estimator / Summary -->
+     <section class="estimator" aria-labelledby="estimator-heading">
+  <div class="estimator-inner">
+    <h2 id="estimator-heading">Campus Cost & Commute Estimator</h2>
+    <p class="section-sub">
+      Quick numbers for your weekly transport and snack budget — run the estimator below to calculate your plan.
+    </p>
+
+    <div class="summary-card" role="region" aria-labelledby="summary-title">
+      <h3 id="summary-title">Weekly Summary</h3>
+      <pre id="summary" aria-live="polite">Run the estimator to see your weekly plan…</pre>
+      <p class="small-note">
+        💡 Tip: Saving 10% could mean one less solo ride or planning two carpool days a week.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Featured Projects (inspiration area) -->
+    <section class="featured" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Projects & Tools</h2>
+      <p class="section-sub">Orientation resources and helpful links for new students.</p>
+
+      <div class="projects-grid" role="list">
+        <article class="project-card" role="listitem">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Campus Map</h3>
+          <p>Quick offline-friendly map and building notes for your first week.</p>
+        </article>
+
+        <article class="project-card" role="listitem">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Dining Options</h3>
+          <p>Affordable snack spots and realistic price ranges near campus.</p>
+        </article>
+
+        <article class="project-card" role="listitem">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1529257414773-196b6f0f37a1?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Commute Tips</h3>
+          <p>Transit suggestions including matatu, boda or carpooling notes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- small accessible footer  -->
+    <section class="end-cta" aria-hidden="false">
+      <p class="center small-cta">Need to reset results? Re-run estimator or reload the page.</p>
+    </section>
+  </main>
+
+ <footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>USIU Freshman Guide</h3>
+      <p>Your personalized orientation companion — built to help you navigate campus life with ease.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero-heading">Home</a></li>
+        <li><a href="#estimator-heading">Estimator</a></li>
+        <li><a href="#featured-heading">Resources</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Student Affairs Office<br>
+      United States International University – Africa<br>
+      Nairobi, Kenya</p>
+      <a href="mailto:studentaffairs@usiu.ac.ke" class="email-link">studentaffairs@usiu.ac.ke</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> USIU Freshman Guide — All Rights Reserved</p>
+  </div>
+</footer>
+  <!-- End footer -->
+
+  <!-- External JS (final) -->
+  <script src="script.js"></script>
+
+  <!-- Minimal internal script to wire up listeners (shows internal + external usage) -->
+  <script>
+    // this internal snippet simply binds the buttons to functions defined in script.js
+    // external script.js must be loaded before this runs (it is).
+    document.getElementById('run').addEventListener('click', runEstimator);
+    document.getElementById('theme').addEventListener('click', toggleTheme);
+    // set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
